@@ -3281,7 +3281,7 @@ static int adev_open_output_stream(struct audio_hw_device *dev,
             check_and_set_gapless_mode(adev, true);
 
         if (audio_extn_dolby_is_passthrough_stream(out->flags)) {
-            out->flags |= AUDIO_OUTPUT_FLAG_COMPRESS_PASSTHROUGH;
+            out->flags |= AUDIO_OUTPUT_FLAG_COMPRESS_OFFLOAD;
         }
     } else if (out->flags & AUDIO_OUTPUT_FLAG_INCALL_MUSIC) {
         ret = voice_check_and_set_incall_music_usecase(adev, out);
